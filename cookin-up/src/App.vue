@@ -1,5 +1,14 @@
+<script lang="ts">
+import Banner from './components/Banner.vue';
+export default {
+  components: {Banner: Banner}
+}
+</script>
+
 <template>
-  <h1>Iniciando o projeto Vue de cardapio inteligente
-  </h1>
+  <banner />
 </template>
 
+<style scoped>
+
+</style>
