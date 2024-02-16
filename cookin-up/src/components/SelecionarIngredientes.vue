@@ -1,8 +1,10 @@
 <script lang="ts">
+import { obterCategorias } from '@/http/index';
+
 export default {
     data() {
         return {
-            categorias: []
+            categorias: obterCategorias()
         }
     }
 }
@@ -18,7 +20,7 @@ export default {
 
         <ul class="categorias">
             <li v-for="categoria in categorias" :key="categoria.nome">
-
+                {{ categoria.nome }}
             </li>
         </ul>
 
