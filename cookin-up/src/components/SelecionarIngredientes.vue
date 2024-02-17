@@ -1,11 +1,15 @@
 <script lang="ts">
 import { obterCategorias } from '@/http/index';
+import type ICategoria from '@/interfaces/ICategorias';
 
 export default {
     data() {
         return {
-            categorias: obterCategorias()
+            categorias: [] as ICategoria[]
         }
+    },
+    async created() {
+      this.categorias = await obterCategorias();
     }
 }
 </script>
@@ -35,11 +39,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(46, 43, 43);
+  background: rgb(47, 63, 46);
 }
 
 .titulo-ingredientes {
-  color: var(--verde-medio, #3D6D4A);
+  color: var(--verde-medio, #26a046);
   display: block;
   margin-bottom: 1.5rem;
 }
