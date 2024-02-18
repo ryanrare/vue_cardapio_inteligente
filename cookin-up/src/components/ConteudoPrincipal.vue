@@ -1,46 +1,44 @@
 <script lang="ts">
-import SelecionarIngredientes from './SelecionarIngredientes.vue'
+import SelecionarIngredientes from './SelecionarIngredientes.vue';
 
 export default {
-    data() {
-        return {
-            ingredientes: ["Alho", "Manteiga", "Orégano"]
-        }
-    },
-    components: { SelecionarIngredientes }
+  data() {
+    return {
+      ingredientes: ['Alho', 'Manteiga', 'Orégano']
+    };
+  },
+  components: { SelecionarIngredientes }
 }
 </script>
 
 <template>
-    <main class="conteudo-pricipal">
-        <section class="conteudo-principal">
+  <main class="conteudo-principal">
+    <section>
+      <span class="subtitulo-lg sua-lista-texto">
+        Sua lista:
+      </span>
 
-            <span class="subtitulo-lg sua-lista-texto">
-                sua lista:
-            </span>
+      <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
+        <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
+          {{ ingrediente }}
+        </li>
+      </ul>
 
-            <ul  v-if="ingredientes.length" class="ingredientes-sua-lista">
-                <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
-                    {{ ingrediente }}
-                </li>
-            </ul>
+      <p v-else class="paragrafo lista-vazia">
+        <img src="../assets/imagens/icones/lista-vazia.svg" alt="Ícone de pesquisa">
+        Sua lista está vazia, selecione ingredientes para iniciar.
+      </p>
+    </section>
 
-            <p v-else class="paragrafo lista-vazia">
-                <img src="../assets/imagens-main/images/icones/lista-vazia.svg" alt="Ícone de pesquisa">
-                Sua lista está vazia. selecione ingredientes para iniciar.
-            </p>
-
-        </section>
-
-        <SelecionarIngredientes />
-    </main>
+    <SelecionarIngredientes />
+  </main>
 </template>
 
 <style scoped>
 .conteudo-principal {
   padding: 6.5rem 7.5rem;
   border-radius: 3.75rem 3.75rem 0rem 0rem;
-  background: white;
+  background: var(--creme, #FFFAF3);
   color: var(--cinza, #444);
 
   display: flex;
@@ -69,8 +67,8 @@ export default {
   min-width: 4.25rem;
   padding: 0.5rem;
   text-align: center;
-    transition: 0.2s;
-    color: var(--creme, #FFFAF3);
+  transition: 0.2s;
+  color: var(--creme, #FFFAF3);
   background: var(--coral, #F0633C);
   font-weight: 700;
 }
@@ -99,5 +97,4 @@ export default {
     gap: 4rem;
   }
 }
-
 </style>

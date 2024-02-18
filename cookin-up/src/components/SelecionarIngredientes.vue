@@ -1,37 +1,37 @@
 <script lang="ts">
 import { obterCategorias } from '@/http/index';
-import type ICategoria from '@/interfaces/ICategorias';
+import type ICategoria from '@/interfaces/ICategoria';
 
 export default {
-    data() {
-        return {
-            categorias: [] as ICategoria[]
-        }
-    },
-    async created() {
-      this.categorias = await obterCategorias();
+  data() {
+    return {
+      categorias: [] as ICategoria[]
     }
+  },
+  async created() {
+    this.categorias = await obterCategorias();
+  }
 }
 </script>
 
 <template>
-    <section class="selecionar-ingredientes">
-        <h1 class="cabecalho titulo-ingredientes">Ingredientes</h1>
+  <section class="selecionar-ingredientes">
+    <h1 class="cabecalho titulo-ingredientes">Ingredientes</h1>
 
-        <p class="paragrafo-lg instrucoes">
-            Selecione abaixo os ingredientes que voce quer usar nesta receita
-        </p>
+    <p class="paragrafo-lg instrucoes">
+      Selecione abaixo os ingredientes que você quer usar nesta receita:
+    </p>
 
-        <ul class="categorias">
-            <li v-for="categoria in categorias" :key="categoria.nome">
-                {{ categoria.nome }}
-            </li>
-        </ul>
+    <ul class="categorias">
+      <li v-for="categoria in categorias" :key="categoria.nome">
+        {{ categoria.nome }}
+      </li>
+    </ul>
 
-        <p class="paragrafo dica">
-            *Atenção: consideramos que você tem em casa sal, pimenta e água.
-        </p>
-    </section>
+    <p class="paragrafo dica">
+      *Atenção: consideramos que você tem em casa sal, pimenta e água.
+    </p>
+  </section>
 </template>
 
 <style scoped>
@@ -39,11 +39,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(47, 63, 46);
 }
 
 .titulo-ingredientes {
-  color: var(--verde-medio, #26a046);
+  color: var(--verde-medio, #3D6D4A);
   display: block;
   margin-bottom: 1.5rem;
 }
