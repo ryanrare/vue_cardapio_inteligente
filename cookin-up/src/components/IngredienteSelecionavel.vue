@@ -10,6 +10,9 @@ export default {
         return {
             selecionado: false
         }
+    },
+    methods: {
+        aoClicar()
     }
 }
 </script>
@@ -17,7 +20,7 @@ export default {
 <template>
     <button
       class="ingrediente"
-      v-on:click="selecionado = !selecionado"
+      v-on:click="aoClicar"
     >
         <Tag :texto="ingrediente" :ativa="selecionado" />
     </button>
