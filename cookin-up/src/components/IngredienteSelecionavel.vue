@@ -12,7 +12,9 @@ export default {
         }
     },
     methods: {
-        aoClicar()
+        aoClicar() {
+            this.selecionado = !this.selecionado
+        }
     }
 }
 </script>
@@ -20,7 +22,8 @@ export default {
 <template>
     <button
       class="ingrediente"
-      v-on:click="aoClicar"
+      @click="aoClicar"
+      :aria-pressed="selecionado"
     >
         <Tag :texto="ingrediente" :ativa="selecionado" />
     </button>
