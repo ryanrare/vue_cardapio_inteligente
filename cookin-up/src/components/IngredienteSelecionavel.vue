@@ -14,8 +14,13 @@ export default {
     methods: {
         aoClicar() {
             this.selecionado = !this.selecionado
+
+            if (this.selecionado) {
+                this.$emit('adicionarIngrediente', this.ingrediente);
+            }
         }
-    }
+    },
+    emits: ['adicionarIngrediente']
 }
 </script>
 
