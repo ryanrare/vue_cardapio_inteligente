@@ -9,7 +9,8 @@ export default {
     props: {
         categoria: { type: Object as PropType<ICategoria>, required: true }
     },
-    components: { Tag, IngredienteSelecionavel }
+    components: { Tag, IngredienteSelecionavel },
+    emits: ['adicionarIngrediente']
 }
 </script>
 
