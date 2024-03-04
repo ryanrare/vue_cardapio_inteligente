@@ -1,23 +1,12 @@
 <script lang="ts">
 import SelecionarIngredientes from './SelecionarIngredientes.vue';
-import Timeline from './TesteTimeLine.vue';
 import SuaLista from './SuaLista.vue';
 import Tag from './Tag.vue';
 
 export default {
   data() {
     return {
-      ingredientes: [] as string[],
-      ocorrencias: [
-        {
-          date: '2024-03-02',
-          text: 'Comentário 1'
-        },
-        {
-          date: '2024-03-03',
-          text: 'Comentário 2'
-        }
-      ]
+      ingredientes: [] as string[]
     };
   },
   components: { SelecionarIngredientes, Tag, SuaLista, Timeline },
@@ -41,10 +30,6 @@ export default {
       @remover-ingrediente="removerIngrediente"
     />
   </main>
-  <span>Ocorrências</span>
-  <div>
-    <Timeline :comments="ocorrencias" />
-  </div>
 </template>
 
 <style scoped>
