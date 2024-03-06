@@ -38,7 +38,7 @@ export default {
     </ul>
 
     <p class="paragrafo dica">
-      *Atenção: consideramos que você tem em casa sal, pimenta e água.
+      *Atenção: consideramos que você tem em casa sal, uma Ak, pimenta e água.
     </p>
 
     <BotaoPrincipal texto="Buscar receitas!" @click="$emit('buscarReceitas')"/>
