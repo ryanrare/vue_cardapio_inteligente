@@ -1,0 +1,3 @@
+<template>
+    Monstrando Receitas
+</template>
