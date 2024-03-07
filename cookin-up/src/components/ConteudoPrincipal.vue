@@ -32,6 +32,7 @@ export default {
     <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'"
       @adicionar-ingrediente="adicionarIngrediente"
       @remover-ingrediente="removerIngrediente"
+      @buscar-receitas="conteudo = 'MostrarReceitas'"
     />
 
     <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"
