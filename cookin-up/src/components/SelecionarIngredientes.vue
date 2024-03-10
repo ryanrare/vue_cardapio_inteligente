@@ -32,7 +32,7 @@ export default {
           :categoria="categoria"
           @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
           @remover-ingrediente="$emit('removerIngrediente', $event)"
-          @buscar-receitas="conteudo = 'MostrarReceitas'"
+          @buscar-receitas="navegar('Mostrarreceitas')"
         />
       </li>
     </ul>
