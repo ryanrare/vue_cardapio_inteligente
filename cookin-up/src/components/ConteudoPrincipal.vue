@@ -21,6 +21,9 @@ export default {
     removerIngrediente(ingrediente: string) {
       this.ingredientes = this.ingredientes.filter(iLista => ingrediente !== iLista);
     },
+    navegar(pagina: Pagina) {
+        this.conteudo = pagina;
+    }
   }
 }
 </script>
@@ -32,7 +35,7 @@ export default {
     <SelecionarIngredientes v-if="conteudo === 'SelecionarIngredientes'"
       @adicionar-ingrediente="adicionarIngrediente"
       @remover-ingrediente="removerIngrediente"
-      @buscar-receitas="conteudo = 'MostrarReceitas'"
+      @buscar-receitas="navegar('Mostrarreceitas')"
     />
 
     <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"
