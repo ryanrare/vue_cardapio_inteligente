@@ -5,6 +5,7 @@ import CardCategoria from './CardCategoria.vue';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 
 export default {
+  name: 'SelecionarIngredientes',
   data() {
     return {
       categorias: [] as ICategoria[]
@@ -32,7 +33,6 @@ export default {
           :categoria="categoria"
           @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
           @remover-ingrediente="$emit('removerIngrediente', $event)"
-          @buscar-receitas="navegar('Mostrarreceitas')"
         />
       </li>
     </ul>
