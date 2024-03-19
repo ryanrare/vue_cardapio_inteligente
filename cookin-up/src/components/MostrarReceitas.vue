@@ -5,6 +5,7 @@ import { obterReceitas } from '@/http';
 import type IReceita from '@/interfaces/IReceita';
 import BotaoPrincipal from './BotaoPrincipal.vue';
 import CardReceita from './CardReceita.vue';
+import { itensDeLista1estaoEmLista2 } from '@/operacoes/listas';
 
 export default {
   props: {
